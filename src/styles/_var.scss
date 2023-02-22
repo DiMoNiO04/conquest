@@ -1,0 +1,28 @@
+//Переменные
+$backgroundHeader:  #FDFDFB;
+$colorPinkHeader: #E6C8B4;
+$roboto: 'Roboto', sans-serif;
+$transition: all 0.5s ease-in-out;
+
+//Шаблоны
+%flex{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+%hover{
+	cursor: pointer;
+	transition: $transition;
+}
+
+
+//Миксины
+@mixin fonts($style, $weight, $size, $height, $family, $color){
+	font-style: $style;
+	font-weight: $weight;
+	font-size: $size;
+	line-height: $height;
+	font-family: $family;
+	color: $color;
+}

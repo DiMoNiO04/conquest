@@ -1,0 +1,77 @@
+.container{
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: #555248;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style-type: none;
+}
+
+
+//---------Header start---------
+.header{
+	position: fixed;
+	width: 100%;
+	background: $backgroundHeader;
+	&__container{
+		@extend %flex;
+		flex-wrap: wrap;
+		padding: 35px 0 25px 0;
+	}
+}
+
+
+.header__list{
+	@extend %flex;
+	column-gap: 65px;
+	.header__link{
+		@include fonts(normal, 400, 15px, 15px, $roboto, #555248);
+		&:hover{
+			@extend %hover;
+			color: $colorPinkHeader;
+		}
+	}
+}
+
+
+.header__menu{
+	@extend %flex;
+	column-gap: 23px;
+	.menu__item-like{
+		position: relative;
+		&::after{
+			content: "";
+			position: absolute;
+			width: 13px;
+			height: 13px;
+			border-radius: 50%;
+			bottom: 14px;
+			left: 14px;
+			background: $colorPinkHeader;
+		}
+		.item-like__count{
+			@include fonts(normal, 400, 9px, 9px, $roboto, #1B1A17);
+			position: absolute;
+			z-index: 1;
+			top: -2px;
+			right: -2px;
+		}
+	}
+	.menu__item:hover{
+		@extend %hover;
+		transform: scale(1.2);
+	}
+}
+//---------Header end----------
