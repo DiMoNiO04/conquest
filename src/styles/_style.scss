@@ -10,7 +10,8 @@ a{
 	color: #555248;
 }
 
-ul{
+
+ul, h1, h2, h3, p{
 	margin: 0;
 	padding: 0;
 }
@@ -25,6 +26,7 @@ li{
 	position: fixed;
 	width: 100%;
 	background: $backgroundHeader;
+	z-index: 100;
 	&__container{
 		@extend %flex;
 		flex-wrap: wrap;
@@ -36,6 +38,7 @@ li{
 .header__list{
 	@extend %flex;
 	column-gap: 65px;
+	margin-right: 12px;
 	.header__link{
 		@include fonts(normal, 400, 15px, 15px, $roboto, #555248);
 		&:hover{
@@ -75,3 +78,89 @@ li{
 	}
 }
 //---------Header end----------
+
+
+
+//--------Preview start-----------
+.button{
+	@include fonts(normal, 500, 12px, 12px, $roboto,  #FFFFFF);
+	width: 132px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	padding: 25px 38px;
+	&:hover{
+		@extend %hover;
+		opacity: 0.5;
+	}
+}
+
+.preview{
+	background: $backgroundHeader;
+	&__container{
+		justify-content: stretch;
+		column-gap: 65px;
+		background: url('./assets/img/ellipse.png') no-repeat;
+		@include previewbg(55%, 100%, 100%, 855px);
+		@extend %flex;
+	}
+}
+
+.preview__content{
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+	margin-left: 85px;
+	.preview__title h1{
+		@include fonts(normal, 400, 50px, 60px, $playfair,  #1B1A17);
+		&::before{
+			@extend %previewBeforeAfter;
+			right: 65px;
+			top: 35px;
+		}
+	}
+	.preview__title h2{
+		@include fonts(normal, 400, 30px, 40px, $playfair,  #1B1A17);
+	}	
+	.preview__subtitle{
+		@include fonts(normal, 300, 14px, 21px, $roboto,  rgba(27, 26, 23, 0.82));
+	}
+	.preview__button{
+		background: #444240;
+	}
+}
+
+.preview__bg{
+	position: relative;
+	width: 50%;
+	.preview__watch{
+		background: url('./assets/img/watch_main.png') no-repeat;
+		@include previewbg(50px, 90px, 502px, 880px);
+	}
+	.preview__price{
+		position: absolute;
+		display: inline-block;
+		top: 223px;
+		left: -10px;
+		background: url('./assets/img/svg/ruble.svg') no-repeat right top;
+		padding-right: 13px;
+		@include fonts(normal, 400, 16px, 16px, $prata,  #1B1A17);
+		&::after{
+			@extend %previewBeforeAfter;
+			left: 77px;
+			bottom: 10px;
+		}
+	}
+	.preview__size{
+		position: absolute;
+		display: inline-block;
+		bottom: 116px;
+		right: -70px;
+		@include fonts(normal, 400, 16px, 22px, $prata,  #1B1A17);
+		&::after{
+			@extend %previewBeforeAfter;
+			right: 70px;
+			bottom: 12px;
+		}
+	}
+}
+//--------Preview end-------------

@@ -2,6 +2,8 @@
 $backgroundHeader:  #FDFDFB;
 $colorPinkHeader: #E6C8B4;
 $roboto: 'Roboto', sans-serif;
+$playfair:'Playfair Display', serif;
+$prata: 'Prata', serif;
 $transition: all 0.5s ease-in-out;
 
 //Шаблоны
@@ -16,6 +18,15 @@ $transition: all 0.5s ease-in-out;
 	transition: $transition;
 }
 
+%previewBeforeAfter{
+	content: "";
+	width: 50px;
+	height: 1px;
+	background: #8B8371;
+	position: relative;
+	display: block;
+}
+
 
 //Миксины
 @mixin fonts($style, $weight, $size, $height, $family, $color){
@@ -25,4 +36,12 @@ $transition: all 0.5s ease-in-out;
 	line-height: $height;
 	font-family: $family;
 	color: $color;
+}
+
+@mixin previewbg($bpx, $bpy, $width, $height){
+	background-position-x: $bpx;
+	background-position-y: $bpy;
+	width: $width;
+	height: $height;
+	position: relative;
 }
