@@ -32,7 +32,7 @@ li{
 	background: $backgroundHeader;
 	z-index: 100;
 	&__container{
-		@extend %flex;
+		@include flexs(row, space-between, center);
 		flex-wrap: wrap;
 		padding: 35px 0 25px 0;
 	}
@@ -40,7 +40,7 @@ li{
 
 
 .header__list{
-	@extend %flex;
+	@include flexs(row, space-between, center);
 	column-gap: 65px;
 	margin-right: 12px;
 	.header__link{
@@ -54,7 +54,7 @@ li{
 
 
 .header__menu{
-	@extend %flex;
+	@include flexs(row, space-between, center);
 	column-gap: 23px;
 	.menu__item-like{
 		position: relative;
@@ -101,17 +101,15 @@ li{
 .preview{
 	background: $backgroundHeader;
 	&__container{
-		justify-content: stretch;
 		column-gap: 65px;
 		background: url('./assets/img/ellipse.png') no-repeat;
 		@include previewbg(55%, 100%, 100%, 855px);
-		@extend %flex;
+		@include flexs(row, stretch, center);
 	}
 }
 
 .preview__content{
-	display: flex;
-	flex-direction: column;
+	@include flexs(column, space-between, flex-start);
 	row-gap: 40px;
 	margin-left: 85px;
 	.preview__title h1{
@@ -176,8 +174,7 @@ li{
 	background: #FFFFFF;
 	&__container{
 		padding: 80px 0 85px 0;
-		@extend %flex;
-		flex-direction: column;
+		@include flexs(column, space-between, center);
 	}
 }
 
@@ -195,7 +192,7 @@ li{
 }
 
 .models__content{
-	@extend %flex;
+	@include flexs(row, space-between, center);
 	flex-wrap: wrap;
 	padding-top: 25px;
 	column-gap: 30px;
@@ -239,3 +236,84 @@ li{
 	}
 }
 //--------Models end--------------
+
+
+
+//-------Quality start------------
+.quality{
+	background: url('./assets/img/svg/ellipse__quality__small.svg') no-repeat top right,
+		url('./assets/img/svg/ellipse__quality__big.svg') no-repeat bottom right;
+}
+
+.quality__bacgrounds{
+	display: flex;
+	width: 100%;
+	position: absolute;
+	.quality__bg-first{
+		height: 520px;
+		background: #F7F5EF;
+		width: 35%;
+	}
+	.quality__bg-second{
+		background: #FDFDFB;
+		width: 65%;
+		height: 520px;
+	}
+}
+
+.quality__container{
+	padding: 52px 15px 20px 15px;
+	position: relative;
+   left: -20px;
+	.quality__cont{
+		@include flexs(column, flex-start, stretch);
+		row-gap: 18px;
+	}
+}
+
+.quality__content{
+	@include flexs(row, center, stretch);
+   column-gap: 70px;
+	.quality__info{
+		@include flexs(column, center, stretch);
+		.quality__title{
+			margin-bottom: 28px;
+		}
+		.quality__text{
+			@include fonts(normal, 400, 16px, 24px, $roboto,  #444240);
+			max-width: 364px;
+			margin-bottom: 45px;
+		}
+		.quality__button{
+			background: #D4B098;
+		}
+	}
+}
+
+.quality__pages{
+	@include flexs(row, center, center);
+   column-gap: 20px;
+   margin-left: -190px;
+	.pages__arrow-left,
+	.pages__arrow-right{
+		display: inline-block;
+		border: none;
+		background: transparent;
+		height: 11px;
+	}
+	.pages__page{
+		@include fonts(normal, 400, 12px, 16px, $prata,  rgba(27, 26, 23, 0.82));
+	}
+	.pages__arrow-left{
+		background: url('./assets/img/svg/arrow_left.svg') no-repeat;
+	}	
+	.pages__arrow-right{
+		background: url('./assets/img/svg/arrow_right.svg') no-repeat;
+	}
+	.pages__arrow-left:hover,
+	.pages__arrow-right:hover{
+		@extend %hover;
+		transform: scale(1.5);
+	}
+}
+//-------Quality end--------------
