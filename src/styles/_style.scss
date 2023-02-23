@@ -249,6 +249,7 @@ li{
 	display: flex;
 	width: 100%;
 	position: absolute;
+	z-index: -1;
 	.quality__bg-first{
 		height: 520px;
 		background: #F7F5EF;
@@ -374,3 +375,41 @@ li{
 	}
 }
 //-------New end-----------------
+
+
+
+//-------Footer start----------
+.footer{
+	background: #444240;
+	&__container{
+		padding: 79px 0 67px 0;
+		@include flexs(row, space-around, stretch);
+		flex-wrap: wrap;
+	}
+}
+
+.footer__block{
+	@include flexs(column, flex-start, stretch);
+	row-gap: 28px;
+	&:first-child{
+		position: relative;
+		top: -12px;
+	}
+	.footer__title{
+		@include fonts(normal, 700, 14px, 16px, $roboto,  #FFFFFF);
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+	.footer__items{
+		@include flexs(column, flex-start, stretch);
+		row-gap: 4px;
+		.footer__item a{
+			@include fonts(normal, 400, 12px, 14px, $roboto,   rgba(255, 255, 255, 0.75));
+			&:hover{
+				@extend %hover;
+				color: #D4B098;
+			}
+		}
+	}
+}
+//-------Footer end------------

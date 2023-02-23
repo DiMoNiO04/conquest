@@ -6,18 +6,13 @@ $playfair:'Playfair Display', serif;
 $prata: 'Prata', serif;
 $transition: all 0.3s ease-in-out;
 
-//Шаблоны
-%flex{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
 
+
+//Шаблоны
 %hover{
 	cursor: pointer;
 	transition: $transition;
 }
-
 
 
 //Миксины
