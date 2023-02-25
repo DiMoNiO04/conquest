@@ -88,10 +88,11 @@ li{
 //--------Preview start-----------
 .button{
 	@include fonts(normal, 500, 12px, 12px, $roboto,  #FFFFFF);
-	width: 132px;
+	max-width: 132px;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	padding: 25px 38px;
+	text-align: center;
 	&:hover{
 		@extend %hover;
 		opacity: 0.5;
@@ -103,8 +104,8 @@ li{
 	&__container{
 		column-gap: 65px;
 		background: url('./assets/img/ellipse.png') no-repeat;
-		@include previewbg(55%, 100%, 100%, 855px);
-		@include flexs(row, stretch, center);
+		@include previewbg(55%, 100%, 100%, auto);
+		@include flexs(row, space-between, center);
 	}
 }
 
@@ -134,15 +135,17 @@ li{
 .preview__bg{
 	position: relative;
 	width: 50%;
-	.preview__watch{
-		background: url('./assets/img/watch_main.png') no-repeat;
-		@include previewbg(50px, 90px, 502px, 880px);
+	.preview__watch-img{
+		position: relative;
+		height: 850px;
+		top: 30px;
+		left: -4%;
 	}
 	.preview__price{
 		position: absolute;
 		display: inline-block;
-		top: 223px;
-		left: -10px;
+		top: 23%;
+		left: -16%;
 		background: url('./assets/img/svg/ruble.svg') no-repeat right top;
 		padding-right: 13px;
 		@include fonts(normal, 400, 16px, 16px, $prata,  #1B1A17);
@@ -155,8 +158,8 @@ li{
 	.preview__size{
 		position: absolute;
 		display: inline-block;
-		bottom: 116px;
-		right: -70px;
+		bottom: 15%;
+		right: 0;
 		@include fonts(normal, 400, 16px, 22px, $prata,  #1B1A17);
 		&::after{
 			@include previewBeforeAfter(50px, #8B8371);
@@ -200,8 +203,7 @@ li{
 
 .models__model{
 	padding: 40px 28px;
-	width: 314px;
-	height: 390px;
+	max-width: 314px;
 	background: url('./assets/img/svg/ellipse_watch.svg') no-repeat center,
 		#FDFDFB;
 	.model__title{
@@ -216,8 +218,7 @@ li{
 		display: inline-block;
 	}
 	img{
-		width: 313px;
-		height: 313px;
+		max-width: 100%;
 	}
 	.model__about{
 		@include fonts(normal, 400, 16px, 21px, $playfair, #1B1A17);
@@ -275,6 +276,9 @@ li{
 .quality__content{
 	@include flexs(row, center, stretch);
    column-gap: 70px;
+	img{
+		max-width: 44.5%
+	}
 	.quality__info{
 		@include flexs(column, center, stretch);
 		.quality__title{
@@ -325,7 +329,8 @@ li{
 .news{
 	background: #FFFFFF;
 	&__container{
-		@include flexs(row, flex-start, stretch);
+		@include flexs(row, center, center);
+		flex-wrap: wrap;
 		padding: 80px 0 90px 0;
 		column-gap: 70px;
 	}
@@ -335,7 +340,7 @@ li{
 	padding: 140px 0 60px 0;
 	.news__title{
 		margin-bottom: 30px;
-		width: 471px;
+		max-width: 471px;
 	}
 	.news__text{
 		@include fonts(normal, 400, 16px, 27px, $roboto,  #444240);
